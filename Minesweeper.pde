@@ -2,7 +2,7 @@ import de.bezier.guido.*;
 //Declare and initialize constants NUM_ROWS and NUM_COLS = 20
 int NUM_ROWS = 20;
 int NUM_COLS = 20;
-int NUM_MINES = 2;
+int NUM_MINES = 40;
 boolean isLost = false;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> mines; //ArrayList of just the minesweeper buttons that are mined
@@ -77,7 +77,7 @@ public void displayLosingMessage()
     }
   }
   for (int i = 0; i < mines.size(); i++) {
-    mines.get(i).setColor(255, 0, 0);
+    mines.get(i).mineClicked = true;
   }
   for (int i = 0; i < NUM_COLS; i++) {
     buttons[NUM_ROWS/2-2][i].lossColor = true;
@@ -101,7 +101,7 @@ public void displayWinningMessage()
     }
   }
   for (int i = 0; i < mines.size(); i++) {
-    mines.get(i).setColor(255, 0, 0);
+    mines.get(i).mineClicked = true;
   }
   for (int i = 0; i < NUM_ROWS; i++) {    
     buttons[i][NUM_COLS/2-3].wonColor = true;
@@ -149,7 +149,7 @@ public class MSButton
 {
   private int myRow, myCol;
   private float x, y, width, height;
-  private boolean clicked, flagged, lossColor, wonColor;
+  private boolean clicked, flagged, lossColor, wonColor, mineClicked;
   private String myLabel;
   private color myColor;
 
@@ -211,6 +211,8 @@ public class MSButton
       fill(255, 91, 91);
     else if (wonColor)
       fill(94, 106, 210);
+    else if (mineClicked) 
+      fill(255, 0, 0);
     else if (flagged)
       fill(0);
     else if ( clicked && mines.contains(this) ) 
