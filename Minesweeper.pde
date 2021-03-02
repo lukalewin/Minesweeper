@@ -7,6 +7,8 @@ boolean isLost = false;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> mines; //ArrayList of just the minesweeper buttons that are mined
 
+MSButton but;
+
 void setup ()
 {
   size(400, 400);
@@ -33,11 +35,9 @@ public void setMines()
   for (int i = 0; i < NUM_MINES; i++) {
     int rRow = (int)(Math.random()*NUM_ROWS);
     int rCol = (int)(Math.random()*NUM_COLS);
-    System.out.println(rRow + " " + rCol);
     if (!mines.contains(buttons[rRow][rCol])) {
       mines.add(buttons[rRow][rCol]);
     } else {
-      System.out.println("Button already in array | " + mines);
       i=i-1;
     }
   }
