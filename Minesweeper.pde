@@ -11,7 +11,7 @@ MSButton but;
 
 void setup ()
 {
-  size(500, 500);
+  size(400, 400);
   textAlign(CENTER, CENTER);
   textSize(18);
 
@@ -162,8 +162,8 @@ public class MSButton
 
   public MSButton ( int row, int col )
   {
-    width = 500/NUM_COLS;
-    height = 500/NUM_ROWS;
+    width = 400/NUM_COLS;
+    height = 400/NUM_ROWS;
     myRow = row;
     myCol = col; 
     x = myCol*width;
