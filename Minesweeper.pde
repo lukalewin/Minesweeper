@@ -7,8 +7,6 @@ boolean isLost = false;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> mines; //ArrayList of just the minesweeper buttons that are mined
 
-MSButton but;
-
 void setup ()
 {
   size(400, 400);
