@@ -170,7 +170,6 @@ public class MSButton
     y = myRow*height;
     myLabel = "";
     flagged = clicked = false;
-    myColor = color(100, 100, 100);
     Interactive.add( this ); // register it with the manager
   }
 
@@ -251,9 +250,5 @@ public class MSButton
   public boolean isFlagged()
   {
     return flagged;
-  }
-  public void setColor(int r, int g, int b) {
-    myColor = color(r, g, b);
-    fill( myColor );
   }
 }
